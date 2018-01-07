@@ -1,21 +1,19 @@
+//
+// Javascript code for the mapbox map used, and the data to be pulled from open weather map's API.
+//
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoidGluc2xleWdsIiwiYSI6ImNqYnhyYzIzajJ1NWEyd21mY2g5NXp3NnUifQ.NdmV2VFJQ3C6CvFi_TjDgg';
-// This adds the map to your page
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoidGluc2xleWdsIiwiYSI6ImNqYnhyYzIzajJ1NWEyd21mY2g5NXp3NnUifQ.NdmV2VFJQ3C6CvFi_TjDgg';
 var map = new mapboxgl.Map({
-  // container id specified in the HTML
   container: 'map',
-  // style URL
   style: 'mapbox://styles/mapbox/light-v9',
-  // initial position in [lon, lat] format
-  center: [-3.1793, 51.478433],
-  // initial zoom
+  center: [-3.1793, 51.478433], //co-ordinates for cardiff
   zoom: 14
 });
 
-
-var stores = {
-        
-        
+//GEOjson data to be used for the listings on the map, can be altered to add additional locations if needed.
+var stores = {    
   "type": "FeatureCollection",
   "features": [
     {
@@ -514,23 +512,25 @@ var stores = {
     }
   ]
 }
+//end of GEOjson data for listings
 
 
-
-
+//
+//Code below from Mapbox tutorial on how to build store locator using Mapbox GS JL
+//edited to include weather search function
+//details - https://www.mapbox.com/help/building-a-store-locator/#build-store-listing
+//
 
 map.on('load', function(e) {
-  // Add the data to your map as a layer
   map.addLayer({
     id: 'locations',
     type: 'symbol',
-    // Add a GeoJSON source containing place coordinates and information.
     source: {
       type: 'geojson',
-      data: stores
+      data: stores //variable containing geojson data
     },
     layout: {
-      'icon-image': 'restaurant-15',
+      'icon-image': 'triangle-11',
       'icon-allow-overlap': true,
     }
   });
@@ -566,8 +566,10 @@ map.on('click', function(e) {
   }
 });
 
+//function for the getting weather data from current selected listing,
+//weather API from https://openweathermap.org/
 function getWeather(currentFeature) {
-
+  //deletes current information in weather section
   if (document.body.contains(document.getElementById("weatherReport"))) {
     document.getElementById("weather_sec").removeChild(document.getElementById("weatherReport"));
   }
@@ -583,7 +585,6 @@ function getWeather(currentFeature) {
   xhttp.open("GET", weatherSearch);
   xhttp.addEventListener('load', function(){
   var response = JSON.parse(this.response);
-  console.log(response);
 
   //code for checking level of humidity and creating variable
   if (response.main.humidity <= 25) {
@@ -625,7 +626,7 @@ function getWeather(currentFeature) {
   } else if (response.main.temp < 4 & response.wind.speed < 20.7) {
     var weatherConclusion = document.createTextNode("Seems like the kind of weather where you'd rather be inside maybe?");
   } else {
-    var weatherConclusion = document.createTextNode("Definaely not a good time to be outside for a drink, we'd give this time a miss.");
+    var weatherConclusion = document.createTextNode("Definately not a good time to be outside for a drink, we'd give this time a miss.");
   }
 
   var currentWeather = document.createTextNode("Current weather description: " + response.weather[0].main);
@@ -660,7 +661,6 @@ function getWeather(currentFeature) {
   createdDiv.appendChild(currentWeatherPara);
   createdDiv.appendChild(currentConditionsPara);
   createdDiv.appendChild(weatherConclusionPara);
-
   })
   xhttp.send();
   }
@@ -688,11 +688,7 @@ function buildLocationList(data) {
   // Iterate through the list of stores
   for (i = 0; i < data.features.length; i++) {
     var currentFeature = data.features[i];
-    // Shorten data.feature.properties to just `prop` so we're not
-    // writing this long form over and over again.
     var prop = currentFeature.properties;
-    // Select the listing container in the HTML and append a div
-    // with the class 'item' for each store
     var listings = document.getElementById('listings');
     var listing = listings.appendChild(document.createElement('div'));
     listing.className = 'item';
@@ -720,7 +716,7 @@ link.addEventListener('click', function(e) {
   flyToStore(clickedListing);
   // 2. Close all other popups and display popup for clicked store
   createPopUp(clickedListing);
-  getWeather(clickedListing);
+  getWeather(clickedListing); //weather function to build data on website
   // 3. Highlight listing in sidebar (and remove highlight for all other listings)
   var activeItem = document.getElementsByClassName('active');
   if (activeItem[0]) {

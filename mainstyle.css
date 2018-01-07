@@ -1,3 +1,5 @@
+
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -15,6 +17,13 @@ body {
     font-family: 'Poiret One', sans-serif;
     color: white;
 	background-color: #58768F
+}
+
+@media screen and (min-width: 1650px) {
+  body {
+    margin: 0 auto;
+    max-width: 1650px;
+  }
 }
 
 /* start of code for landing page section */
@@ -38,8 +47,25 @@ body {
 	margin-top: 15vh;
 }
 
+#openingHeading {
+    font-size: 3.5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0
+}
+
 .largeHeadings {
-    font-size: 2rem;
+    font-size: 3rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0
+}
+
+
+@media screen and (max-width: 400px) {
+    .largeHeadings {
+        font-size: 2.5rem;
+    }
 }
 
 .descriptionHeadings {
@@ -47,17 +73,7 @@ body {
 }
 
 #info h3 {
-	font-size: 1rem;
-}
-
-@media screen and (min-width: 750px) {
-	#info h1 {
-	font-size: 3rem;
-}
-#info h3 {
-	font-size: 1.5rem;
-}
-
+	font-size: 1.3rem;
 }
 
 /* end of code for landing page section */
@@ -65,11 +81,71 @@ body {
 
 /* start of code for beer page section */
 
+@media screen and (min-width: 1100px) {
+    #layoutChanger {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #input {
+        width: 50%;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #div1 {
+        width: 50%;
+        padding-left: 20px;
+    }
+}
+
+#layoutChanger {
+
+}
+
 #beer_sec {
 	margin-left: 5vw;
 	margin-right: 5vw;
     display: flex;
     flex-direction: column;
+
+}
+
+#history_sec {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#history_sec p {
+    text-align: justify;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+
+@media screen and (min-width: 1100px) {
+    #beer_sec {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: white;
+    }
+    #history_sec {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px;
+    border-style: solid;
+    border-color: white;
+    }
 }
 
 #name_search_term {
@@ -80,10 +156,18 @@ body {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px;
+    border-bottom: 3px;
     border-style: solid;
     border-color: white;
+}
 
+@media screen and (min-width: 1100px) {
+    #div1 {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    }
 }
 
 .input_areas {
@@ -104,7 +188,7 @@ body {
 }
 
 .infoParagraphs {
-    font-size: 14px;
+    font-size: 17px;
 }
 
 /* end of code for beer page section */
@@ -174,9 +258,18 @@ body {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px;
+    border-bottom: 3px;
     border-style: solid;
     border-color: white;
+    cursor: pointer;
+
+}
+
+@media screen and (min-width: 1100px) {
+    #search_icons {
+        border-bottom: 0;
+
+    }
 }
 
 
@@ -247,6 +340,7 @@ body {
   border-bottom: 1px solid #eee;
   padding: 10px;
   text-decoration: none;
+    cursor: pointer;
 }
 
 .listings .item:last-child { 
@@ -260,12 +354,8 @@ body {
 
 .listings .item .title small { font-weight: 400; }
 
-.listings .item.active .title,
-.listings .item .title:hover { color: #8cc63f; }
+.listings .item .title:hover { color: black; }
 
-.listings .item.active {
-  background-color: #f8f8f8;
-}
 
 ::-webkit-scrollbar {
   width: 3px;
@@ -298,8 +388,10 @@ body {
 }
 
 .mapboxgl-popup-content h3 {
-  background: #91c949;
-  color: #fff;
+    font-family: 'Poiret One', sans-serif;
+  background: #58768F;
+  text-align: center;
+  color: white;
   margin: 0;
   display: block;
   padding: 10px;
@@ -309,9 +401,12 @@ body {
 }
 
 .mapboxgl-popup-content h4 {
+        font-family: 'Poiret One', sans-serif;
+    background: white;
+    text-align: center;
   margin: 0;
+  color: black;
   display: block;
-  padding: 10px;
   font-weight: 400;
 }
 
@@ -331,6 +426,26 @@ body {
   border-bottom-color: #91c949;
 }
 
+@media screen and (min-width: 750px) {
+
+    #container1 {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sidebar {
+       width: 40%;
+    }
+    .map {
+        width: 60%;
+        max-width: 700px;
+        height: auto;
+    }
+    .listings {
+        height: 550px;
+    }
+}
+
+
 /* end of css for map and listings page section */
 
 /* start of css for weather reporting page section */
@@ -338,10 +453,29 @@ body {
 #weather_sec {
     margin-left: 5vw;
     margin-right: 5vw;
+    margin-top: 20px;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 3px;
+    border-style: solid;
+    border-color: white;
 }
 
 /* start of css for weather reporting page section */
 
+
+.weatherHeadings {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 2rem;
+}
+
+.weatherParagraphs {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 17px;
+}
 
 
 .footer {
@@ -352,10 +486,18 @@ body {
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
-    border-top: 1px;
+    border-top: 3px;
     border-style: solid;
     border-color: white;
+    margin-bottom: 0px;
 }
+
+.footer p {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 
 
 
