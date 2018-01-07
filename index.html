@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="mainstyle.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Poiret+One" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.css' rel='stylesheet' />
+
+	<meta charset="UTF-8">
+
+
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+	<script>
+		window.sr = ScrollReveal();
+	</script>
+
+</head>
+<body>
+	<section id="landing_page">
+		<header id="top_menu">
+			<nav>
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a href="#">About</a>
+					<a href="#">Services</a>
+					<a href="#">Clients</a>
+					<a href="#">Contact</a>
+				</div>
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+			</nav>
+
+			<div>
+				<h1>Find your Beer</h1>
+			</div>
+		</header>
+
+		<div id="info">
+			<h1 class="largeHeadings">Love BrewDog?</h1>
+
+			<h3>Search for your favourite BrewDog beers, or find great new ones to try.</h3>
+
+			<h3>Use our location finder to find your local BrewDog, and even check whether it's going to be a great day to have a few drinks in the sun.</h3>
+
+			<h3>Scroll down to find out how...</h3>
+
+		</div>
+
+	</section>
+
+	<section id="beer_sec">
+		<h1 class="largeHeadings">Find a beer</h1>
+
+		<h3 class="descriptionHeadings">Use the options below to find your perfect BrewDog beer</h3>
+
+		<div id="input">
+			<form class="input_areas">
+				<label for="name_search_term">Already have a favourite?</label>
+				<input type="text" id="name_search_term" placeholder="Punk IPA...">
+			</form>
+
+			<form class="input_areas">
+				<label for="alco_search_term">How strong?</label>
+				<input type="number" id="alco_search_term" placeholder="Less than...">
+			</form>
+
+			<form class="input_areas">
+				<label for="food_search_term">Beer for a meal?</label>
+				<input type="text" id="food_search_term" placeholder="chicken...">
+			</form>
+
+		</div>
+
+		<div id="search_icons">
+			<button id="search_button"><i class="material-icons">search</i></button>
+			<button id="next_button"><i class="material-icons">arrow_forward</i></button>
+		</div>
+
+		<div id="div1">
+
+		</div>
+
+	</section>
+
+
+
+
+<section id="map_sec">
+
+	<h1 class="largeHeadings">Find a location</h1>
+
+	<h3 class="descriptionHeadings">Check for a location close to you and we'll tell you if it's a great day to sink a few beers</h3>
+
+	<div id="container1">
+
+		<div class='sidebar'>
+			<div id='listings' class='listings'></div>
+		</div>
+
+		<div id='map' class='map pad2'></div>
+
+	</div>
+
+</section>
+
+<section id="weather_sec">
+
+	<h1 class="largeHeadings">Check the weather</h1>
+
+	<div id="weatherReport">
+		
+	</div>
+	
+</section>
+
+<div class="footer">
+	<p>Student Number: C1226237</p>
+</div>
+
+
+	<script src="beer.js"></script>
+	<script src="mapWeather.js"></script>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>

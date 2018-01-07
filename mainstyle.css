@@ -1,0 +1,365 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+    font-family: 'Poiret One', sans-serif;
+    color: white;
+	background-color: #58768F
+}
+
+/* start of code for landing page section */
+
+#landing_page {
+	width: 100vw;
+	height: 100vh;
+}
+
+#top_menu {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-left: 5vw;
+	margin-right: 5vw;
+}
+
+#info {
+	margin-left: 5vw;
+	margin-right: 5vw;
+	margin-top: 15vh;
+}
+
+.largeHeadings {
+    font-size: 2rem;
+}
+
+.descriptionHeadings {
+    margin-top: 0;
+}
+
+#info h3 {
+	font-size: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+	#info h1 {
+	font-size: 3rem;
+}
+#info h3 {
+	font-size: 1.5rem;
+}
+
+}
+
+/* end of code for landing page section */
+
+
+/* start of code for beer page section */
+
+#beer_sec {
+	margin-left: 5vw;
+	margin-right: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#name_search_term {
+}
+
+#div1 {
+    padding-bottom: 20px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: white;
+
+}
+
+.input_areas {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_areas label {
+    padding-top: 15px;
+    padding-bottom: 5px;
+
+}
+
+.input_areas input {
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+}
+
+.infoParagraphs {
+    font-size: 14px;
+}
+
+/* end of code for beer page section */
+
+#search_button {
+
+}
+
+
+
+/* hidden nav menu code below */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* hidden nav menu code above */
+
+.material-icons {
+    color: white;
+}
+
+
+#search_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+
+
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    font-family: 'Poiret One', cursive;
+    color: white;
+    background-color: #58768F;
+    font-size: 20px;
+    cursor: pointer;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: .3s all ease;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: ;
+    display: none;
+}
+
+/* start of css for map and lsstings page section */
+
+#map_sec {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#container1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  height: 100%;
+  overflow: hidden;
+}
+
+.map {
+    padding-top: 20px;
+    height: 300px;
+}
+
+.mapboxgl-canvas{
+    width: 100vw;
+}
+
+.listings {
+  height: 440px;
+  overflow: auto;
+}
+
+.listings .item {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.listings .item:last-child { 
+    border-bottom: none; }
+
+.listings .item .title {
+  display: block;
+  color: white;
+  font-weight: 700;
+}
+
+.listings .item .title small { font-weight: 400; }
+
+.listings .item.active .title,
+.listings .item .title:hover { color: #8cc63f; }
+
+.listings .item.active {
+  background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-left: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: ;
+  border-radius: 0;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup-content {
+  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  padding: 0;
+  width: 180px;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
+}
+
+.mapboxgl-popup-content h3 {
+  background: #91c949;
+  color: #fff;
+  margin: 0;
+  display: block;
+  padding: 10px;
+  border-radius: 3px 3px 0 0;
+  font-weight: 700;
+  margin-top: -15px;
+}
+
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  display: block;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+
+.mapboxgl-container .leaflet-marker-icon {
+  cursor: pointer;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+  margin-top: 15px;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+  border-bottom-color: #91c949;
+}
+
+/* end of css for map and listings page section */
+
+/* start of css for weather reporting page section */
+
+#weather_sec {
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+/* start of css for weather reporting page section */
+
+
+
+.footer {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    display: flex;
+    justify-content: center;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px;
+    border-style: solid;
+    border-color: white;
+}
+
+
+
+
+
+
+
